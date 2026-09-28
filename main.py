@@ -99,9 +99,9 @@ plt.title("CATL Multi-Tier Supply Chain Network Diagram", fontsize = 14, fontwei
 plt.axis('off')
 plt.tight_layout()
 
-#saves to file. not necessary right now, but be sure to UNCOMMENT IF NECESSARY::
-#plt.savefig('network_diagram.png', dpi = 300, bbox_inches = 'tight')
-#plt.show()
+#saves image to file within the repo
+plt.savefig('network_diagram.png', dpi = 300, bbox_inches = 'tight')
+plt.show()
 
 #END TASK 2 WHATTTT
 
