@@ -1,16 +1,16 @@
-
-#couldn't import openpyxl for some reason, this should fix that problem from now on. 
 #add/remove required libraries as needed
 import subprocess
 import sys
 
-# Ensure required libraries are installed#couldn't import openpyxl for some reason, this should fix that problem from now on. 
+#couldn't import openpyxl for some reason, this should fix that problem from now on. 
 for lib in ['pandas', 'networkx', 'matplotlib', 'openpyxl', 'scipy']:
     try:
         __import__(lib)
     except ImportError:
         subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
 
+
+#the rest of em
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
