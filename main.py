@@ -4,7 +4,7 @@
 import subprocess
 import sys
 
-# Ensure required libraries are installed
+# Ensure required libraries are installed#couldn't import openpyxl for some reason, this should fix that problem from now on. 
 for lib in ['pandas', 'networkx', 'matplotlib', 'openpyxl', 'scipy']:
     try:
         __import__(lib)
