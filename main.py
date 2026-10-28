@@ -120,8 +120,7 @@ t1_t3 = (tier1_suppliers & tier3_suppliers) - tier2_suppliers
 t1_t2_t3 = tier1_suppliers & tier2_suppliers & tier3_suppliers
 
 #total unique multi-tier suppliers
-tot_multi_tier_suppliers =  
-    (tier1_suppliers & tier2_suppliers) | \
+tot_multi_tier_suppliers =  (tier1_suppliers & tier2_suppliers) | \
     (tier2_suppliers & tier3_suppliers) | \
     (tier1_suppliers & tier3_suppliers)
 
