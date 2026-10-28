@@ -70,12 +70,12 @@ plt.figure(figsize = (12, 10))
 node_colors = []
 
 #dogs are colors :D
-dog1 = "red"
-dog2 = "lightgreen"
-dog3 = "skyblue"
-dog4 = "gold"
-dog5 = "pink"
-dog6 = "lightgray"
+dog1 = "red"            #central hub color
+dog2 = "lightgreen"     #tier 1 suppliers color
+dog3 = "skyblue"        #tier 2 suppliers color
+dog4 = "gold"           #tier 3 suppliers color
+dog5 = "pink"           #tier 1 customers color
+dog6 = "lightgray"      #whatever else's color
 
 #assign colors based on tier/role
 for node in G.nodes():
@@ -102,6 +102,22 @@ nx.draw_networkx_edges(G, pos, edge_color = 'gray', arrows = True, arrowsize = 5
 #highlight central CATL label for the node.
 if 'CATL' in G:
     nx.draw_networkx_labels(G, pos, labels = {'CATL': 'CATL'}, font_size = 12, font_weight = 'bold', font_color = 'black')
+
+from matplotlib.lines import Line2D
+
+#create manual legend
+legend_elements = [
+    Line2D([0], [0], marker='o', color='w', label='Central Hub (CATL)', markerfacecolor=dog1, markersize=10),
+    Line2D([0], [0], marker='o', color='w', label='Tier 1 Suppliers', markerfacecolor=dog2, markersize=10),
+    Line2D([0], [0], marker='o', color='w', label='Tier 2 Suppliers', markerfacecolor=dog3, markersize=10),
+    Line2D([0], [0], marker='o', color='w', label='Tier 3 Suppliers', markerfacecolor=dog4, markersize=10),
+    Line2D([0], [0], marker='o', color='w', label='Tier 1 Customers', markerfacecolor=dog5, markersize=10),
+    Line2D([0], [0], marker='o', color='w', label='Other / Undefined', markerfacecolor=dog6, markersize=10),
+]
+
+#add legend to plot
+plt.legend(handles=legend_elements, loc='upper right', bbox_to_anchor=(1.15, 1.0), frameon=True, shadow=True)
+
 
 plt.title("CATL Multi-Tier Supply Chain Network Diagram", fontsize = 14, fontweight = 'bold')
 plt.axis('off')
