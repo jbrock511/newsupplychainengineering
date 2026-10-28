@@ -45,7 +45,7 @@ print(f"Unique Tier 3 suppliers: {len(tier3_suppliers)}")
 print(f"Total network edges: {total_network_edges}")
 print(f"Unique Tier 1 customers: {len(tier1_customers)}")
 
-#END TASK 1 lets goooooo
+#END TASK 1
 
 #=======================================
 #Task 2: Construct and visualize network
@@ -103,7 +103,7 @@ plt.tight_layout()
 plt.savefig('network_diagram.png', dpi = 300, bbox_inches = 'tight')
 plt.show()
 
-#END TASK 2 WHATTTT
+#END TASK 2
 
 #========================================================
 #Task 3: we're gonna identify suppliers in multiple tiers
@@ -120,9 +120,10 @@ t1_t3 = (tier1_suppliers & tier3_suppliers) - tier2_suppliers
 t1_t2_t3 = tier1_suppliers & tier2_suppliers & tier3_suppliers
 
 #total unique multi-tier suppliers
-tot_multi_tier_suppliers = (tier1_suppliers & tier2_suppliers) | \
-                        (tier2_suppliers & tier3_suppliers) | \
-                        (tier1_suppliers & tier3_suppliers)
+tot_multi_tier_suppliers =  
+    (tier1_suppliers & tier2_suppliers) | \
+    (tier2_suppliers & tier3_suppliers) | \
+    (tier1_suppliers & tier3_suppliers)
 
 #display the counts for task 3
 print("\n=== Task 3 ===")
@@ -160,6 +161,6 @@ print("\nMulti-Tier Supplier summary table (first " + str(row_count) + " rows):"
 print(multi_tier_df.head(row_count))
 print(f"\nSaved full table ({len(multi_tier_df)} rows) to multi_tier_suppliers.csv")
 
-#END TASK 3 OH YEAH
+#END TASK 3
 
 #I think thats the end of the assignment?
