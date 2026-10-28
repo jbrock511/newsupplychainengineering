@@ -69,20 +69,28 @@ plt.figure(figsize = (12, 10))
 #initialize the node_colors list. chatGPT was required for me to figure out I needed to do this. embarassing tbh
 node_colors = []
 
+#dogs are colors :D
+dog1 = "red"
+dog2 = "lightgreen"
+dog3 = "skyblue"
+dog4 = "gold"
+dog5 = "pink"
+dog6 = "lightgray"
+
 #assign colors based on tier/role
 for node in G.nodes():
     if node == 'CATL':
-        node_colors.append('red') #central hub will be this color
+        node_colors.append(dog1) #central hub will be this color
     elif node in tier1_suppliers:
-        node_colors.append('lightgreen') #tier 1 suppliers
+        node_colors.append(dog2) #tier 1 suppliers
     elif node in tier2_suppliers:
-        node_colors.append('skyblue') #tier 2 suppliers
+        node_colors.append(dog3) #tier 2 suppliers
     elif node in tier3_suppliers:
-        node_colors.append('gold') #tier 3 suppliers
+        node_colors.append(dog4) #tier 3 suppliers
     elif node in tier1_customers:
-        node_colors.append('pink') #tier 1 customers
+        node_colors.append(dog5) #tier 1 customers
     else:
-        node_colors.append('lightgray') #whatever else/undefined
+        node_colors.append(dog6) #whatever else/undefined
 
 #calculate positioning. spring layout gives us the cleanest structure in my humble opinion
 pos = nx.spring_layout(G, seed = 42, k = 0.15)
